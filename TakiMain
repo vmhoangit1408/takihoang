@@ -1,0 +1,104 @@
+var listUser=["vmhoangit1408","camgiang1003","phuonganh1511","ntcamgiang1608"];
+    setTimeout(function() {
+        if (window.location.href=="https://taki.app/home/") {
+            window.location.href="https://taki.app/wallet/";
+        }
+        else if(window.location.href=="https://taki.app/wallet/"){
+            window.location.href="https://taki.app/transactions/";
+        }
+        else if(window.location.href=="https://taki.app/transactions/"){
+            setTimeout(function() {
+                console.log("11111111111111111");
+                window.location.href="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href");
+
+            }, 5000);
+        }
+        else if(window.location.href=="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href")){
+            setTimeout(function() {
+                console.log("share");
+                document.getElementsByClassName("css-d7m6vi e56mmy00")[0].click();
+                setTimeout(function() {
+                    window.location.href="https://taki.app/u/alicetran1510/";
+                }, 5000);
+            }, 5000);
+        }
+        else if(window.location.href=="https://taki.app/u/alicetran1510/"){
+
+            if(localStorage.getItem('followIs')==null ){
+                localStorage.setItem('followIs', 2);
+            }
+            if(localStorage.getItem('fl2')==null ){
+                localStorage.setItem('fl2', 0);
+            }
+            setTimeout(function() {
+                var checkFollow = setInterval(function() {
+                    console.log(localStorage.getItem('followIs'));
+
+                    console.log(localStorage.getItem('fl2'));
+                    if(document.getElementsByClassName("css-aexmy e15ggqxc9").length == parseFloat(localStorage.getItem('followIs')) && document.getElementsByClassName("css-aexmy e15ggqxc9").length == 2 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Following"){
+                        console.log("da fl");
+                        document.getElementsByClassName("css-aexmy e15ggqxc9")[0].click();
+                        setTimeout(function() {
+                            window.document.querySelectorAll("body > #modal-root .css-akdqam.e5k0zht0 button.css-1bd7jm8.e15ggqxc9")[0].click();
+                            var checkStatus = setInterval(function() {
+                                console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                                if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
+                                    clearInterval(checkStatus);
+                                    if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("stopped")){
+                                        localStorage.setItem('followIs', 1);
+                                    }
+                                    else{
+                                        location.reload();
+                                    }
+                                }
+
+                            }, 1000);
+                        }, 3000);
+                    }
+                    else if(document.getElementsByClassName("css-aexmy e15ggqxc9").length == parseFloat(localStorage.getItem('followIs'))&& document.getElementsByClassName("css-aexmy e15ggqxc9").length == 1 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Follow"){
+                        console.log("chua fl");
+                        document.getElementsByClassName("css-aexmy e15ggqxc9")[0].click();
+                        var checkStatus = setInterval(function() {
+                            console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                            if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
+                                clearInterval(checkStatus);
+                                if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
+                                    localStorage.setItem('followIs', 2);
+                                    localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
+                                    if(parseFloat(localStorage.getItem('fl2'))==2){
+                                        clearInterval(checkFollow);
+                                        localStorage.setItem('fl2', 0);
+                                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                    }
+                                }
+                                else{
+                                    location.reload();
+                                }
+                            }
+
+                        }, 1000);
+                    }
+                    else{
+                        console.log("loi");
+                        location.reload();
+                    }
+
+                }, 10000);
+            }, 5000);
+
+        }
+        else if(window.location.href !="https://taki.app/u/alicetran1510/" && window.location.href.includes("https://taki.app/u/")){
+            setTimeout(function() {
+                console.log("content");
+                document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
+                setTimeout(function() {
+                    if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
+                        document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
+                    }
+                    else{
+                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                    }
+                }, 3000);
+            }, 5000);
+        }
+    }, 5000);
