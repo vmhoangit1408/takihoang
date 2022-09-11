@@ -71,37 +71,57 @@
                     if(document.getElementsByClassName("css-aexmy e15ggqxc9").length == parseFloat(localStorage.getItem('followIs')) && document.getElementsByClassName("css-aexmy e15ggqxc9").length == 2 ){
                         console.log("da fl");
                         document.getElementsByClassName("css-aexmy e15ggqxc9")[1].click();
-                        setTimeout(function() {
-                            document.getElementsByClassName("css-2l1iy8 ej2twmx0")[0].click();
-                            setTimeout(function() {
-                                document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
-                                setTimeout(function() {
-                                    localStorage.setItem('followIs', 1);
-                                    location.reload();
-                                }, 5000);
-                            }, 3000);
-                        }, 3000);
+                        var check21 = setInterval(function() {
+                            if(!document.getElementById("modal-root").innerText==""){
+                                clearInterval(check21);
+                                document.getElementsByClassName("css-2l1iy8 ej2twmx0")[0].click();
+                                var check22 = setInterval(function() {
+                                    if(document.getElementsByClassName("css-1xr6f4j emn2ld37")[1].value != ""){
+                                        clearInterval(check22);
+                                        console.log("sellllllllllll");
+                                        document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
+                                        var check23 = setInterval(function() {
+                                            if(document.getElementById("modal-root").innerText.includes("Transaction completed")){
+                                                clearInterval(check23);
+                                                localStorage.setItem('followIs', 1);
+                                                location.reload();
+                                            }
+                                        }, 2000);
+                                    }
+                                }, 2000);
+                            }
+                        }, 2000);
+
                     }
                     else if(document.getElementsByClassName("css-aexmy e15ggqxc9").length == parseFloat(localStorage.getItem('followIs'))&& document.getElementsByClassName("css-aexmy e15ggqxc9").length == 1 ){
                         console.log("chua fl");
                         document.getElementsByClassName("css-1e691c3 e15ggqxc9")[0].click();
-                        setTimeout(function() {
-                            document.getElementsByClassName("css-2l1iy8 ej2twmx0")[0].click();
-                            setTimeout(function() {
-                                document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
-                                setTimeout(function() {
-                                    localStorage.setItem('followIs', 2);
-                                    localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
-                                    if(parseFloat(localStorage.getItem('fl2'))==2){
-                                        localStorage.setItem('fl2', 0);
-                                        //window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                        var check11 = setInterval(function() {
+                            if(!document.getElementById("modal-root").innerText==""){
+                                clearInterval(check11);
+                                document.getElementsByClassName("css-2l1iy8 ej2twmx0")[0].click();
+                                var check12 = setInterval(function() {
+                                    if(document.getElementsByClassName("css-1xr6f4j emn2ld37")[1].value != ""){
+                                        clearInterval(check12);
+                                        console.log("sellllllllllll");
+                                        document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
+                                        var check13 = setInterval(function() {
+                                            if(document.getElementById("modal-root").innerText.includes("Transaction completed")){
+                                                clearInterval(check13);
+                                                localStorage.setItem('followIs', 2);
+                                                localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
+                                                if(parseFloat(localStorage.getItem('fl2'))==2){
+                                                    localStorage.setItem('fl2', 0);
+                                                }
+                                                else{
+                                                    location.reload();
+                                                }
+                                            }
+                                        }, 2000);
                                     }
-                                    else{
-                                        location.reload();
-                                    }
-                                }, 5000);
-                            }, 3000);
-                        }, 3000);
+                                }, 2000);
+                            }
+                        }, 2000);
                     }
                     else{
                         console.log("loi");
@@ -109,13 +129,7 @@
                     }
                 }
             }, 10000);
-
-
-
-
-
         }
-
     }, 5000);
 
 })();
