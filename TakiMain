@@ -103,7 +103,7 @@
                                 var check12 = setInterval(function() {
                                     if(document.getElementsByClassName("css-1xr6f4j emn2ld37")[1].value != ""){
                                         clearInterval(check12);
-                                        console.log("sellllllllllll");
+                                        console.log("buyyyyyyyyyyyyy");
                                         document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
                                         var check13 = setInterval(function() {
                                             if(document.getElementById("modal-root").innerText.includes("Transaction completed")){
