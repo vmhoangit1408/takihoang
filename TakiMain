@@ -26,7 +26,8 @@
                 console.log("share");
                 document.getElementsByClassName("css-d7m6vi e56mmy00")[0].click();
                 setTimeout(function() {
-                    window.location.href="https://taki.app/u/hayluontien/";
+                    //window.location.href="https://taki.app/u/hayluontien/";
+                    window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                 }, 5000);
             }, 5000);
         }
@@ -74,7 +75,7 @@
                                 localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
                                 if(parseFloat(localStorage.getItem('fl2'))==2){
                                     localStorage.setItem('fl2', 0);
-                                    window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                    //window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                                 }
                                 else{
                                     location.reload();
@@ -102,6 +103,9 @@
                 setTimeout(function() {
                     if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
                         document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
+                        setTimeout(function() {
+                            window.location.href="https://taki.app/u/hayluontien/"
+                        }, 5000);
                     }
                     else{
                         window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
