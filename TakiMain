@@ -28,7 +28,7 @@
                 setTimeout(function() {
                     //window.location.href="https://taki.app/u/hayluontien/";
                     window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-                }, 5000);
+                }, 8000);
             }, 5000);
         }
         else if(window.location.href !="https://taki.app/u/hayluontien/" && window.location.href.includes("https://taki.app/u/")){
