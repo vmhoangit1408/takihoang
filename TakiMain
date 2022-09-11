@@ -31,6 +31,27 @@
                 }, 5000);
             }, 5000);
         }
+        else if(window.location.href !="https://taki.app/u/hayluontien/" && window.location.href.includes("https://taki.app/u/")){
+            setTimeout(function() {
+                console.log("content");
+                document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
+                setTimeout(function() {
+                    if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
+                        document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
+                        setTimeout(function() {
+                            if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 3){
+                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                            }else{
+                                window.location.href="https://taki.app/u/hayluontien/";
+                            }
+                        }, 5000);
+                    }
+                    else{
+                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                    }
+                }, 3000);
+            }, 5000);
+        }
         else if(window.location.href=="https://taki.app/u/hayluontien/"){
 
             if(localStorage.getItem('followIs')==null ){
@@ -94,23 +115,7 @@
 
 
         }
-        else if(window.location.href !="https://taki.app/u/hayluontien/" && window.location.href.includes("https://taki.app/u/")){
-            setTimeout(function() {
-                console.log("content");
-                document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
-                setTimeout(function() {
-                    if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
-                        document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
-                        setTimeout(function() {
-                            window.location.href="https://taki.app/u/hayluontien/";
-                        }, 5000);
-                    }
-                    else{
-                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-                    }
-                }, 3000);
-            }, 5000);
-        }
+
     }, 5000);
 
 })();
