@@ -49,10 +49,6 @@
                     }, 3000);
                 }
                 else{
-                    if(localStorage.getItem('fl2')==null ){
-                        localStorage.setItem('fl2', 0);
-                    }
-                    console.log(localStorage.getItem('fl2'));
                     setTimeout(function() {
                         if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Following"){
                             console.log("da fl");
@@ -81,13 +77,11 @@
                                 if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
                                     clearInterval(checkStatus);
                                     if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
-                                        localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
-                                        if(parseFloat(localStorage.getItem('fl2'))==2){
-                                            localStorage.setItem('fl2', 0);
-                                        }
-                                        else{
-                                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-                                        }
+                                        setTimeout(function() {
+                                            if(!document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText=="5 TAKI"){
+                                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                            }
+                                        }, 5000);
                                     }
                                     else{
                                         window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
