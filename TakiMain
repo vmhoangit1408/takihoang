@@ -59,10 +59,10 @@
                                     window.document.querySelectorAll("body > #modal-root .css-akdqam.e5k0zht0 button.css-1bd7jm8.e15ggqxc9")[0].click();
                                     var checkStatus = setInterval(function() {
                                         console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
-                                        //if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
-                                        clearInterval(checkStatus);
-                                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-
+                                        if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
+                                            clearInterval(checkStatus);
+                                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                        }
                                     }, 1000);
                                 }
                                 else{
