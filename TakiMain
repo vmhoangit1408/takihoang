@@ -34,7 +34,7 @@
             }
             else if(window.location.href.includes("https://taki.app/u/")){
                 //setTimeout(function() {
-                if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 5){
+                if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 4){
                     console.log("content");
                     document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                     setTimeout(function() {
