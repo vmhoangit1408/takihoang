@@ -1,6 +1,4 @@
-(function() {
-    var listUser=["vmhoangit1408","phuonganh1511","alicetran1510","danyalpro2802","gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd"];
-    setTimeout(function() {
+setTimeout(function() {
         if (window.location.href=="https://taki.app/home/") {
             setTimeout(function() {
                 var checkCaptcha = setInterval(function() {
@@ -33,7 +31,7 @@
         }
         else if(window.location.href.includes("https://taki.app/u/")){
             setTimeout(function() {
-                if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 3){
+                if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 5){
                     console.log("content");
                     document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                     setTimeout(function() {
@@ -107,5 +105,3 @@
 
         }
     }, 5000);
-
-})();
