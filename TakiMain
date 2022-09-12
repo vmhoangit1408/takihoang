@@ -20,122 +20,91 @@
         else if(window.location.href=="https://taki.app/transactions/"){
             setTimeout(function() {
                 window.location.href="https://taki.app/u/hayluontien/";
-            }, 5000);
+            }, 8000);
         }
         else if(window.location.href=="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href")){
             setTimeout(function() {
                 console.log("share");
                 document.getElementsByClassName("css-d7m6vi e56mmy00")[0].click();
                 setTimeout(function() {
-                    //window.location.href="https://taki.app/u/hayluontien/";
                     window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                 }, 8000);
             }, 5000);
         }
-        else if(window.location.href !="https://taki.app/u/hayluontien/" && window.location.href.includes("https://taki.app/u/")){
-            setTimeout(function() {
-                console.log("content");
-                document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
-                setTimeout(function() {
-                    if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
-                        document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
-                        setTimeout(function() {
-                            if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 3){
-                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-                            }else{
-                                window.location.href="https://taki.app/u/hayluontien/";
-                            }
-                        }, 5000);
-                    }
-                    else{
-                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-                    }
-                }, 3000);
-            }, 5000);
-        }
-        else if(window.location.href=="https://taki.app/u/hayluontien/"){
-
-            if(localStorage.getItem('followIs')==null ){
-                localStorage.setItem('followIs', 2);
-            }
-            if(localStorage.getItem('fl2')==null ){
-                localStorage.setItem('fl2', 0);
-            }
-            console.log(localStorage.getItem('followIs'));
-            console.log(localStorage.getItem('fl2'));
-
+        else if(window.location.href.includes("https://taki.app/u/")){
             setTimeout(function() {
                 if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 3){
-                    window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                    console.log("content");
+                    document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
+                    setTimeout(function() {
+                        if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
+                            document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
+                            setTimeout(function() {
+                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                            }, 5000);
+                        }
+                        else{
+                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                        }
+                    }, 3000);
                 }
                 else{
-                    if(document.getElementsByClassName("css-aexmy e15ggqxc9").length == parseFloat(localStorage.getItem('followIs')) && document.getElementsByClassName("css-aexmy e15ggqxc9").length == 2 ){
-                        console.log("da fl");
-                        document.getElementsByClassName("css-aexmy e15ggqxc9")[1].click();
-                        var check21 = setInterval(function() {
-                            if(!document.getElementById("modal-root").innerText==""){
-                                clearInterval(check21);
-                                document.getElementsByClassName("css-2l1iy8 ej2twmx0")[0].click();
-                                var check22 = setInterval(function() {
-                                    if(document.getElementsByClassName("css-1xr6f4j emn2ld37")[1].value != ""){
-                                        clearInterval(check22);
-                                        console.log("sellllllllllll");
-                                        document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
-                                        var check23 = setInterval(function() {
-                                            if(document.getElementById("modal-root").innerText.includes("Transaction completed")){
-                                                clearInterval(check23);
-                                                localStorage.setItem('followIs', 1);
-                                                location.reload();
-                                            }
-                                            else if(document.getElementById("modal-root").innerText==""){
-                                                window.location.href="https://taki.app/transactions/";
-                                            }
-                                        }, 2000);
+                    if(localStorage.getItem('fl2')==null ){
+                        localStorage.setItem('fl2', 0);
+                    }
+                    console.log(localStorage.getItem('fl2'));
+                    setTimeout(function() {
+                        if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Following"){
+                            console.log("da fl");
+                            document.getElementsByClassName("css-aexmy e15ggqxc9")[0].click();
+                            setTimeout(function() {
+                                if(document.getElementsByClassName("css-1bd7jm8 e15ggqxc9").length > 0){
+                                    window.document.querySelectorAll("body > #modal-root .css-akdqam.e5k0zht0 button.css-1bd7jm8.e15ggqxc9")[0].click();
+                                    var checkStatus = setInterval(function() {
+                                        console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                                        if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
+                                            clearInterval(checkStatus);
+                                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                        }
+                                    }, 1000);
+                                }
+                                else{
+                                    window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                }
+                            }, 3000);
+                        }
+                        else if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Follow"){
+                            console.log("chua fl");
+                            document.getElementsByClassName("css-aexmy e15ggqxc9")[0].click();
+                            var checkStatus = setInterval(function() {
+                                console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                                if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
+                                    clearInterval(checkStatus);
+                                    if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
+                                        localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
+                                        if(parseFloat(localStorage.getItem('fl2'))==2){
+                                            localStorage.setItem('fl2', 0);
+                                        }
+                                        else{
+                                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                        }
                                     }
-                                }, 2000);
-                            }
-                        }, 2000);
+                                    else{
+                                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                    }
+                                }
 
-                    }
-                    else if(document.getElementsByClassName("css-aexmy e15ggqxc9").length == parseFloat(localStorage.getItem('followIs'))&& document.getElementsByClassName("css-aexmy e15ggqxc9").length == 1 ){
-                        console.log("chua fl");
-                        document.getElementsByClassName("css-1e691c3 e15ggqxc9")[0].click();
-                        var check11 = setInterval(function() {
-                            if(!document.getElementById("modal-root").innerText==""){
-                                clearInterval(check11);
-                                document.getElementsByClassName("css-2l1iy8 ej2twmx0")[0].click();
-                                var check12 = setInterval(function() {
-                                    if(document.getElementsByClassName("css-1xr6f4j emn2ld37")[1].value != ""){
-                                        clearInterval(check12);
-                                        console.log("buyyyyyyyyyyyyy");
-                                        document.getElementsByClassName("css-yi2qqh e15ggqxc9")[0].click();
-                                        var check13 = setInterval(function() {
-                                            if(document.getElementById("modal-root").innerText.includes("Transaction completed")){
-                                                clearInterval(check13);
-                                                localStorage.setItem('followIs', 2);
-                                                localStorage.setItem('fl2', parseFloat(localStorage.getItem('fl2'))+1);
-                                                if(parseFloat(localStorage.getItem('fl2'))==2){
-                                                    localStorage.setItem('fl2', 0);
-                                                }
-                                                else{
-                                                    location.reload();
-                                                }
-                                            }
-                                            else if(document.getElementById("modal-root").innerText==""){
-                                                window.location.href="https://taki.app/transactions/";
-                                            }
-                                        }, 2000);
-                                    }
-                                }, 2000);
-                            }
-                        }, 2000);
-                    }
-                    else{
-                        console.log("loi");
-                        location.reload();
-                    }
+                            }, 1000);
+                        }
+                        else {
+                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                        }
+                    }, 10000);
                 }
-            }, 10000);
+
+            }, 5000);
+
+
         }
     }, 5000);
 
