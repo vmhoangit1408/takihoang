@@ -12,13 +12,14 @@
             }, 10000);
         }
         else if(window.location.href=="https://taki.app/wallet/"){
-            window.location.href="https://taki.app/transactions/";
+            setTimeout(function() {
+                window.location.href="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href");
+            }, 5000);
+
         }
         else if(window.location.href=="https://taki.app/transactions/"){
             setTimeout(function() {
-                console.log("11111111111111111");
-                window.location.href="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href");
-
+                window.location.href="https://taki.app/u/hayluontien/";
             }, 5000);
         }
         else if(window.location.href=="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href")){
@@ -86,6 +87,9 @@
                                                 localStorage.setItem('followIs', 1);
                                                 location.reload();
                                             }
+                                            else if(document.getElementById("modal-root").innerText==""){
+                                                window.location.href="https://taki.app/transactions/";
+                                            }
                                         }, 2000);
                                     }
                                 }, 2000);
@@ -116,6 +120,9 @@
                                                 else{
                                                     location.reload();
                                                 }
+                                            }
+                                            else if(document.getElementById("modal-root").innerText==""){
+                                                window.location.href="https://taki.app/transactions/";
                                             }
                                         }, 2000);
                                     }
