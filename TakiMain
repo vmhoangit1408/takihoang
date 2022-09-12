@@ -10,12 +10,12 @@
                             window.location.href="https://taki.app/wallet/";
                         }
                     }, 2000);
-                }, 5000);
+                }, 10000);
             }
             else if(window.location.href=="https://taki.app/wallet/"){
-                //setTimeout(function() {
+                setTimeout(function() {
                 window.location.href="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href");
-                //}, 5000);
+                }, 5000);
 
             }
             // else if(window.location.href=="https://taki.app/transactions/"){
@@ -24,16 +24,16 @@
             //     }, 8000);
             // }
             else if(window.location.href=="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href")){
-                //setTimeout(function() {
+                setTimeout(function() {
                 console.log("share");
                 document.getElementsByClassName("css-d7m6vi e56mmy00")[0].click();
                 setTimeout(function() {
                     window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                 }, 8000);
-                //}, 5000);
+                }, 5000);
             }
             else if(window.location.href.includes("https://taki.app/u/")){
-                //setTimeout(function() {
+                setTimeout(function() {
                 if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 4){
                     console.log("content");
                     document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
@@ -91,7 +91,7 @@
                     }, 10000);
                 }
 
-                //}, 5000);
+                }, 5000);
 
 
             }
