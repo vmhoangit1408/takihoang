@@ -78,7 +78,7 @@
                                     clearInterval(checkStatus);
                                     if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
                                         setTimeout(function() {
-                                            if(!document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText=="5 TAKI"){
+                                            if(document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText!="5 TAKI"){
                                                 console.log("chua xong");
                                                 window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                                             }
