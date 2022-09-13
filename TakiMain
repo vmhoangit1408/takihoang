@@ -3,7 +3,7 @@
         location.reload();
     }, 60000);
     try{
-        var listUser=["gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd"];
+        var listUser=["vmhoangit1408","phuonganh1511","alicetran1510","danyalpro2802","gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd"];
         setTimeout(function() {
             if(document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText!="5 TAKI"){
                 if (window.location.href=="https://taki.app/home/") {
