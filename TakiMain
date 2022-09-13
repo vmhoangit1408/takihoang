@@ -11,10 +11,13 @@
                         var checkCaptcha = setInterval(function() {
                             if(document.getElementById("modal-root").innerText==""){
                                 clearInterval(checkCaptcha);
-                                window.location.href="https://taki.app/wallet/";
+                                document.getElementsByClassName("css-y37wda eno6ygk0")[0].click();
+                                setTimeout(function() {
+                                    window.location.href="https://taki.app/wallet/";
+                                }, 5000);
                             }
                         }, 2000);
-                    }, 10000);
+                    }, 5000);
                 }
                 else if(window.location.href=="https://taki.app/wallet/"){
                     setTimeout(function() {
@@ -38,7 +41,7 @@
                 }
                 else if(window.location.href.includes("https://taki.app/u/")){
                     setTimeout(function() {
-                        if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 4){
+                        if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 6 || document.getElementsByClassName("CircularProgressbar-text")[0].innerText=="3/5"){
                             console.log("content");
                             document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                             setTimeout(function() {
