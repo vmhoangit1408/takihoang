@@ -5,7 +5,7 @@
     try{
         var listUser=["gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd"];
         setTimeout(function() {
-            if(document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText!="5 TAKI"){
+            if(document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText!="5 TAKI" || document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText!="10 TAKI"){
                 if (window.location.href=="https://taki.app/home/") {
                     setTimeout(function() {
                         var checkCaptcha = setInterval(function() {
@@ -58,15 +58,16 @@
                         }
                         else{
                             setTimeout(function() {
-                                if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Following"){
+                                if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].innerText == "Following"){
                                     console.log("da fl");
-                                    document.getElementsByClassName("css-aexmy e15ggqxc9")[0].click();
+                                    document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].click();
                                     setTimeout(function() {
-                                        if(document.getElementsByClassName("css-1bd7jm8 e15ggqxc9").length > 0){
-                                            window.document.querySelectorAll("body > #modal-root .css-akdqam.e5k0zht0 button.css-1bd7jm8.e15ggqxc9")[0].click();
+                                        if(document.getElementsByClassName("css-sypkxk e15ggqxc9").length > 0){
+                                            //window.document.querySelectorAll("body > #modal-root .css-akdqam.e5k0zht0 button.css-1bd7jm8.e15ggqxc9")[0].click();
+                                            document.getElementsByClassName("css-sypkxk e15ggqxc9")[0].click();
                                             var checkStatus = setInterval(function() {
                                                 console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
-                                                if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
+                                                if(window.document.querySelectorAll("body > div.css-myk9g6 ec6v7f3")[0].innerText!=""){
                                                     clearInterval(checkStatus);
                                                     window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                                                 }
@@ -77,9 +78,9 @@
                                         }
                                     }, 3000);
                                 }
-                                else if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0 && document.getElementsByClassName("css-aexmy e15ggqxc9")[0].innerText == "Follow"){
+                                else if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0 && document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].innerText == "Follow"){
                                     console.log("chua fl");
-                                    document.getElementsByClassName("css-aexmy e15ggqxc9")[0].click();
+                                    document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].click();
                                     var checkStatus = setInterval(function() {
                                         console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
                                         if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
