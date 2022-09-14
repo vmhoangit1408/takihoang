@@ -11,7 +11,7 @@
                         var checkCaptcha = setInterval(function() {
                             if(document.getElementById("modal-root").innerText==""){
                                 clearInterval(checkCaptcha);
-                                document.getElementsByClassName("css-y37wda eno6ygk0")[0].click();
+                                document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                                 setTimeout(function() {
                                     window.location.href="https://taki.app/wallet/";
                                 }, 5000);
