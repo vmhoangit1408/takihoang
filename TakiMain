@@ -51,11 +51,12 @@
                                     console.log("content");
                                     document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                                     setTimeout(function() {
-                                        if(document.getElementsByClassName("css-2k2qix e15ggqxc4").length > 0){
-                                            document.getElementsByClassName("css-2k2qix e15ggqxc4")[0].click();
+                                        var slTim=document.getElementsByClassName("css-2k2qix e15ggqxc4").length;
+                                        if(slTim > 0){
+                                            document.getElementsByClassName("css-2k2qix e15ggqxc4")[Math.floor(Math.random() * slTim)].click();
                                             setTimeout(function() {
                                                 window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
-                                            }, 5000);
+                                            }, 15000);
                                         }
                                         else{
                                             window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
