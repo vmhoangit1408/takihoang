@@ -63,7 +63,7 @@
                                                         document.getElementsByClassName("css-sypkxk e15ggqxc9")[0].click();
                                                         var checkStatus = setInterval(function() {
                                                             console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
-                                                            if(window.document.querySelectorAll("body > div.css-myk9g6 ec6v7f3")[0].innerText!=""){
+                                                            if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
                                                                 clearInterval(checkStatus);
                                                                 window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
                                                             }
