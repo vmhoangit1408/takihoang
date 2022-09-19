@@ -3,8 +3,8 @@
         location.reload();
     }, 60000);
     try{
-        var listUser=["vmhoangit1408","phuonganh1511","alicetran1510","danyalpro2802","gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd","hayluontien"];
-        var listFL=["ntcamgiang1608","gihogift","trananhthu1510","camgiang1003"];
+        var listUser=["vmhoangit1408","phuonganh1511","alicetran1510","danyalpro2802","gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd","hayluontien","uchihamain000","sakuram00hai","itachimain001","suyukim00ba","sanharamsau","kimikom00bon","masasimtam","kakohambay","nanuchimnam","hitoricomtam","sukikokemmuoi","saosaonem1mot","cuoidiemm1hai","chiminhemm1ba","honanhdim1bon","khongcongim1nam","thienthienm1sau","oanhoanhm1bay","sontungm1tam","ungthienm1chin","hungbam2muoi","dailieum2mot","kimngusam2hai","thienbinhm2ba","thientuongm2bon","muaroim2nam","mammamm2sau","taylailuam2bay","honsonm2tam","daohaitacm2chin"];
+        var listFL=listUser;
         setTimeout(function() {
             if(document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText=="5 TAKI" || document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText=="10 TAKI"){
                 console.log("hoan thanh hom nay");
