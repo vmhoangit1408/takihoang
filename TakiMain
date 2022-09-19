@@ -4,49 +4,37 @@
     }, 60000);
     try{
         var listUser=["vmhoangit1408","phuonganh1511","alicetran1510","danyalpro2802","gianghoang151","ntcamgiang1608","gihogift","trananhthu1510","camgiang1003","anankasport2902","mrtran190617","thuytienrose24","thientam200617","katarinanguyen","anivianguyen11","dianacao210617","annievo2001","trovequakhufull","banthanfullhd","hayluontien"];
+        var listFL=["ntcamgiang1608","gihogift","trananhthu1510","camgiang1003"];
         setTimeout(function() {
             if(document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText=="5 TAKI" || document.getElementsByClassName("css-1hyjmw1 eeh4f1v0")[0].innerText=="10 TAKI"){
-
                 console.log("hoan thanh hom nay");
-
             }
             else {
-                setTimeout(function() {
                     var checkCaptcha = setInterval(function() {
                         if(document.getElementById("modal-root").innerText==""){
                             clearInterval(checkCaptcha);
                             if (window.location.href=="https://taki.app/home/") {
-                                //setTimeout(function() {
                                 console.log("click top");
                                 document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                                 setTimeout(function() {
                                     window.location.href="https://taki.app/wallet/";
                                 }, 5000);
-
-                                //}, 5000);
                             }
                             else if(window.location.href=="https://taki.app/wallet/"){
-                                //setTimeout(function() {
                                 window.location.href="https://taki.app/wallet/?staking=true";
-                                //}, 5000);
 
                             }
                             else if(window.location.href=="https://taki.app/wallet/?staking=true"){
-                                //setTimeout(function() {
                                 window.location.href="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href");
-                                //}, 5000);
                             }
                             else if(window.location.href=="https://taki.app"+document.getElementsByClassName("css-17orb6k ej2twmx20")[2].getAttribute("href")){
-                                //setTimeout(function() {
                                 console.log("share");
                                 document.getElementsByClassName("css-d7m6vi e56mmy00")[0].click();
                                 setTimeout(function() {
                                     window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
                                 }, 8000);
-                                //}, 5000);
                             }
                             else if(window.location.href.includes("https://taki.app/u/")){
-                                //setTimeout(function() {
                                 if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 9 || (document.getElementsByClassName("CircularProgressbar-text")[0].innerHTML=="3/5" && parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 3)){
                                     console.log("content");
                                     document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
@@ -55,7 +43,7 @@
                                         if(slTim > 0){
                                             document.getElementsByClassName("css-2k2qix e15ggqxc4")[Math.floor(Math.random() * slTim)].click();
                                             setTimeout(function() {
-                                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                                window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
                                             }, 15000);
                                         }
                                         else{
@@ -77,12 +65,12 @@
                                                             console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
                                                             if(window.document.querySelectorAll("body > div.css-myk9g6 ec6v7f3")[0].innerText!=""){
                                                                 clearInterval(checkStatus);
-                                                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                                                window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
                                                             }
                                                         }, 1000);
                                                     }
                                                     else{
-                                                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                                        window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
                                                     }
                                                 }, 3000);
                                             }
@@ -95,31 +83,29 @@
                                                         clearInterval(checkStatus);
                                                         //if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
 
-                                                        window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                                        window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
 
                                                     }
 
                                                 }, 1000);
                                             }
                                             else {
-                                                window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                                window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
                                             }
                                         }
                                         else{
-                                            window.location.href="https://taki.app/u/"+listUser[Math.floor(Math.random() * listUser.length)]+"/";
+                                            window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
                                         }
                                     }, 10000);
                                 }
 
-                                //}, 5000);
                             }
                         }
                     }, 2000);
-                }, 5000);
 
             }
 
-        }, 10000);
+        }, 15000);
     }catch(e){
         location.reload();
     }
