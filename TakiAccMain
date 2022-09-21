@@ -81,7 +81,10 @@ function AddControl(){
                             console.log("click top");
                             document.getElementsByClassName("css-uk8pth eno6ygk0")[0].click();
                             InitializeFirebase();
-                            key=document.getElementsByClassName("css-14e08vj ej2twmx20")[2].getAttribute("href").split('/')[2];
+                            if(localStorage.getItem('KeyUser')==null ){
+                                localStorage.setItem('KeyUser', document.getElementsByClassName("css-14e08vj ej2twmx20")[2].getAttribute("href").split('/')[2]);
+                            }
+                            key=localStorage.getItem('KeyUser');
                             db.ref('/'+yyyy+'/'+mm+'/'+dd+'/'+key).set(0);
                             setTimeout(function() {
                                 window.location.href="https://taki.app/wallet/";
