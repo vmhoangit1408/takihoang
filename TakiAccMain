@@ -123,9 +123,9 @@ function AddControl(){
                             }
                             else if(document.getElementsByClassName("CircularProgressbar-text")[0].innerHTML=="4/5"){
                                 console.log("follow");
-                                if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].innerText == "Following"){
+                                if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Following"){
                                     console.log("da fl");
-                                    document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].click();
+                                    document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
                                     setTimeout(function() {
                                         if(document.getElementsByClassName("css-sypkxk e15ggqxc9").length > 0){
                                             //window.document.querySelectorAll("body > #modal-root .css-akdqam.e5k0zht0 button.css-1bd7jm8.e15ggqxc9")[0].click();
@@ -143,9 +143,9 @@ function AddControl(){
                                         }
                                     }, 3000);
                                 }
-                                else if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0 && document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].innerText == "Follow"){
+                                else if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0 && document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Follow"){
                                     console.log("chua fl");
-                                    document.getElementsByClassName("css-eeid7l e15ggqxc9")[0].click();
+                                    document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
                                     var checkStatus = setInterval(function() {
                                         console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
                                         if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
