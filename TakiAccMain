@@ -72,31 +72,7 @@ function AddControl(){
                 key=localStorage.getItem('KeyUser');
                 db.ref('/'+yyyy+'/'+mm+'/'+dd+'/'+key).set(1);
 
-                if (window.location.href=="https://taki.app/u/taylailuam2bay/") {
-                    if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 && document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Following"){
-                        console.log("da fl");
-                        document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
-                        setTimeout(function() {
-                            if(document.getElementsByClassName("css-1c37aw4 e15ggqxc9").length > 0){
-                                document.getElementsByClassName("css-1c37aw4 e15ggqxc9")[0].click();
-                                var checkStatus = setInterval(function() {
-                                    console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
-                                    if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
-                                        clearInterval(checkStatus);
-                                        window.location.href="https://taki.app/u/taylailuam2bay/";
-                                    }
-                                }, 1000);
-                            }
-                            else{
-                                window.location.href="https://taki.app/u/taylailuam2bay/";
-                            }
-                        }, 3000);
-                    }
-
-                }
-                else{
-                    window.location.href="https://taki.app/u/taylailuam2bay/";
-                }
+                
             }
             else {
                 var checkCaptcha = setInterval(function() {
