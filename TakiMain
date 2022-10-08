@@ -70,9 +70,7 @@ function AddControl(){
                     localStorage.setItem('KeyUser', document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
                 }
                 key=localStorage.getItem('KeyUser');
-                db.ref('/'+yyyy+'/'+mm+'/'+dd+'/'+key).set(1);
-
-                
+                db.ref('/'+yyyy+'/'+mm+'/'+dd+'/'+key).set(document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
             }
             else {
                 var checkCaptcha = setInterval(function() {
