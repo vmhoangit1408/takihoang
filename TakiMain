@@ -186,7 +186,7 @@ function AddControl(){
                                 else{
                                     console.log("star main");
                                     if(window.location.href.split("/")[4] == listMain[0]){
-                                        if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 ){
+                                        if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 1 || (document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0 && document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Following")){
                                             listMain.splice(0, 1);
                                             localStorage.setItem('listMain',listMain.toString());
                                             if(localStorage.getItem('listMain')==""){
