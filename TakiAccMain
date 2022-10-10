@@ -1,4 +1,4 @@
-console.log("v1");
+console.log("v2");
 //Star data ------------------------------------------------------------------------------------------------------------------------------------------
 var db,key,today,dd,mm,yyyy;
 today = new Date();
@@ -237,11 +237,32 @@ function AddControl(){
 
                                                     }
                                                     else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("Sorry")){
-                                                        var userError=listMain[0];
-                                                        listMain.splice(0, 1);
-                                                        listMain.push(userError);
-                                                        localStorage.setItem('listMain',listMain.toString());
-                                                        window.location.href="https://taki.app/u/"+listMain[0]+"/";
+                                                        clearInterval(checkStatus2);
+                                                        setTimeout(function() {
+                                                            document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
+                                                            var checkStatus3 = setInterval(function() {
+                                                                console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                                                                if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
+                                                                    clearInterval(checkStatus3);
+                                                                    listMain.splice(0, 1);
+                                                                    localStorage.setItem('listMain',listMain.toString());
+                                                                    if(localStorage.getItem('listMain')==""){
+                                                                        window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
+                                                                    }
+                                                                    else{
+                                                                        window.location.href="https://taki.app/u/"+listMain[0]+"/";
+                                                                    }
+
+                                                                }
+                                                                else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("Sorry")){
+                                                                    var userError=listMain[0];
+                                                                    listMain.splice(0, 1);
+                                                                    listMain.push(userError);
+                                                                    localStorage.setItem('listMain',listMain.toString());
+                                                                    window.location.href="https://taki.app/u/"+listMain[0]+"/";
+                                                                }
+                                                            }, 1000);
+                                                        }, 3000);
                                                     }
 
                                                 }, 1000);
