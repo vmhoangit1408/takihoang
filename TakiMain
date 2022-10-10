@@ -1,4 +1,4 @@
-console.log("v1");
+console.log("v3");
 //Star data ------------------------------------------------------------------------------------------------------------------------------------------
 var db,key,today,dd,mm,yyyy;
 today = new Date();
@@ -59,7 +59,7 @@ function AddControl(){
     AddControl();
     setTimeout(function() {
         location.reload();
-    }, 60000);
+    }, 120000);
     try{
         if(localStorage.getItem('listMain')==null){
             localStorage.setItem('listMain', "katarinanguyen,hayluontien,uchihamain000,sakuram00hai,itachimain001,suyukim00ba,sanharamsau,kimikom00bon,masasimtam,kakohambay,nanuchimnam,hitoricomtam,sukikokemmuoi,saosaonem1mot,cuoidiemm1hai,chiminhemm1ba,honanhdim1bon,khongcongim1nam,thienthienm1sau,oanhoanhm1bay,sontungm1tam,ungthienm1chin,hungbam2muoi,dailieum2mot,kimngusam2hai,thienbinhm2ba,thientuongm2bon,muaroim2nam,mammamm2sau,taylailuam2bay,honsonm2tam,daohaitacm2chin");
@@ -237,11 +237,32 @@ function AddControl(){
 
                                                     }
                                                     else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("Sorry")){
-                                                        var userError=listMain[0];
-                                                        listMain.splice(0, 1);
-                                                        listMain.push(userError);
-                                                        localStorage.setItem('listMain',listMain.toString());
-                                                        window.location.href="https://taki.app/u/"+listMain[0]+"/";
+                                                        clearInterval(checkStatus2);
+                                                        setTimeout(function() {
+                                                            document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
+                                                            var checkStatus3 = setInterval(function() {
+                                                                console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                                                                if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
+                                                                    clearInterval(checkStatus3);
+                                                                    listMain.splice(0, 1);
+                                                                    localStorage.setItem('listMain',listMain.toString());
+                                                                    if(localStorage.getItem('listMain')==""){
+                                                                        window.location.href="https://taki.app/u/"+listFL[Math.floor(Math.random() * listFL.length)]+"/";
+                                                                    }
+                                                                    else{
+                                                                        window.location.href="https://taki.app/u/"+listMain[0]+"/";
+                                                                    }
+
+                                                                }
+                                                                else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("Sorry")){
+                                                                    var userError=listMain[0];
+                                                                    listMain.splice(0, 1);
+                                                                    listMain.push(userError);
+                                                                    localStorage.setItem('listMain',listMain.toString());
+                                                                    window.location.href="https://taki.app/u/"+listMain[0]+"/";
+                                                                }
+                                                            }, 1000);
+                                                        }, 3000);
                                                     }
 
                                                 }, 1000);
