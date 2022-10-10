@@ -1,4 +1,4 @@
-console.log("v2");
+console.log("v3");
 //Star data ------------------------------------------------------------------------------------------------------------------------------------------
 var db,key,today,dd,mm,yyyy;
 today = new Date();
@@ -59,7 +59,7 @@ function AddControl(){
     AddControl();
     setTimeout(function() {
         location.reload();
-    }, 60000);
+    }, 120000);
     try{
         if(localStorage.getItem('listMain')==null){
             localStorage.setItem('listMain', "katarinanguyen,hayluontien,uchihamain000,sakuram00hai,itachimain001,suyukim00ba,sanharamsau,kimikom00bon,masasimtam,kakohambay,nanuchimnam,hitoricomtam,sukikokemmuoi,saosaonem1mot,cuoidiemm1hai,chiminhemm1ba,honanhdim1bon,khongcongim1nam,thienthienm1sau,oanhoanhm1bay,sontungm1tam,ungthienm1chin,hungbam2muoi,dailieum2mot,kimngusam2hai,thienbinhm2ba,thientuongm2bon,muaroim2nam,mammamm2sau,taylailuam2bay,honsonm2tam,daohaitacm2chin");
