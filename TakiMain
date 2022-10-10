@@ -1,4 +1,4 @@
-console.log("v3");
+console.log("v4");
 //Star data ------------------------------------------------------------------------------------------------------------------------------------------
 var db,key,today,dd,mm,yyyy;
 today = new Date();
@@ -262,7 +262,7 @@ function AddControl(){
                                                                     window.location.href="https://taki.app/u/"+listMain[0]+"/";
                                                                 }
                                                             }, 1000);
-                                                        }, 3000);
+                                                        }, 10000);
                                                     }
 
                                                 }, 1000);
