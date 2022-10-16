@@ -1,4 +1,4 @@
-console.log("v7");
+console.log("v9");
 //Star data ------------------------------------------------------------------------------------------------------------------------------------------
 var db,key,today,dd,mm,yyyy;
 today = new Date();
@@ -118,8 +118,7 @@ function AddControl(){
         localStorage.setItem('Task'+dd+mm+yyyy,0);//localStorage.setItem('Task16102022',0);
     }
     lbTask.innerText="Task "+localStorage.getItem('Task'+dd+mm+yyyy)+"/5";
-    setTimeout(function() {
-        InitializeFirebase();
+    setTimeout(function() {        
         if(localStorage.getItem('Task'+dd+mm+yyyy)=="5"){
             console.log("done task");
             if(window.location.href=="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href")){
@@ -168,15 +167,17 @@ function AddControl(){
                     else if(localStorage.getItem('Task'+dd+mm+yyyy)=="1"){
                         if (window.location.href=="https://taki.app/wallet/?staking=true") {
                             console.log("Task: Stake");
-
+                            InitializeFirebase();
                             if(localStorage.getItem('KeyUser')==null ){
                                 localStorage.setItem('KeyUser', document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
                             }
                             key=localStorage.getItem('KeyUser');
                             db.ref('/'+yyyy+'/'+mm+'/'+dd+'/'+key).set(0);
-                            db.ref('/Like/'+yyyy+'/'+mm+'/'+dd +'/'+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]).set(key);
+                            db.ref('/Like/'+yyyy+'/'+mm+'/'+dd+'/'+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]).set(key);
                             localStorage.setItem('Task'+dd+mm+yyyy,2);
-                            window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
+                            setTimeout(function() {
+                                window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
+                            }, 10000);
                         }
                         else{
                             window.location.href="https://taki.app/wallet/?staking=true";
@@ -188,6 +189,7 @@ function AddControl(){
                             document.getElementsByClassName("css-d7m6vi e56mmy00")[0].click();
                             localStorage.setItem('Task'+dd+mm+yyyy,3);
                             setTimeout(function() {
+                                InitializeFirebase();
                                 db.ref('/Like/'+yyyy+'/'+mm+'/'+dd +'/').once("value", function(snapshot) {
                                     console.log(snapshot.val());
                                     var slLike = Object.keys(snapshot.val()).length;
@@ -201,6 +203,7 @@ function AddControl(){
                         }
                     }
                     else if(localStorage.getItem('Task'+dd+mm+yyyy)=="3" && parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) >= 2.5){
+                        InitializeFirebase();
                         if(window.location.href.includes("https://taki.app/u/") && window.location.href!="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href")){
                             console.log("Task: Like");
                             document.getElementsByClassName("css-182ucoe eno6ygk0")[0].click();
@@ -213,12 +216,9 @@ function AddControl(){
                                             localStorage.setItem('Task'+dd+mm+yyyy,5);
                                             db.ref('/Like/'+yyyy+'/'+mm+'/'+dd +'/'+window.location.href.split("/")[4]).remove();
 
-                                            db.ref('/Like/'+yyyy+'/'+mm+'/'+dd +'/').once("value", function(snapshot) {
-                                                console.log(snapshot.val());
-                                                var slLike = Object.keys(snapshot.val()).length;
-                                                window.location.href="https://taki.app/u/"+Object.keys(snapshot.val())[Math.floor(Math.random() * slLike)]+"/";
-
-                                            });
+                                            setTimeout(function() {
+                                                window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
+                                            }, 10000);
                                         }
                                         else{
                                             db.ref('/Like/'+yyyy+'/'+mm+'/'+dd +'/').once("value", function(snapshot) {
