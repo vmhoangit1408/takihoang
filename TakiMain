@@ -1,21 +1,26 @@
 (function() {
     setTimeout(function() {
-        if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0){
-            if(document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Follow"){
-                document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
-                var checkStatus = setInterval(function() {
-                    console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
-                    if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
-                        clearInterval(checkStatus);
-                    }
-                    else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("Sorry")){
-                        location.reload();
-                    }
-                }, 1000);
+        if(window.location.href=="https://taki.app/u/taylailuam2bay/"){
+            if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0){
+                if(document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Follow"){
+                    document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].click();
+                    var checkStatus = setInterval(function() {
+                        console.log(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText);
+                        if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("started")){
+                            clearInterval(checkStatus);
+                        }
+                        else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText.includes("Sorry")){
+                            location.reload();
+                        }
+                    }, 1000);
+                }
+                else{
+                    location.reload();
+                }
             }
-            else{
-                location.reload();
-            }
+        }
+        else{
+            window.location.href="https://taki.app/u/taylailuam2bay/"
         }
     }, 10000);
 })();
