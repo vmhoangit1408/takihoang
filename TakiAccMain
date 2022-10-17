@@ -1,4 +1,7 @@
 (function() {
+setTimeout(function() {
+        location.reload();
+    }, 60000);
     setTimeout(function() {
         if(window.location.href=="https://taki.app/u/taylailuam2bay/"){
             if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0){
