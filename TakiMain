@@ -1,1 +1,91 @@
+// ==UserScript==
+// @name         Taki Tool New
+// @namespace    https://www.facebook.com/vmhoangit14081992
+// @version      0.1
+// @description  Tool daily tasks taki
+// @author       vmhoangit1408
+// @match        https://taki.app/*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=taki.app
+// @require 	 https://www.gstatic.com/firebasejs/9.1.0/firebase-app-compat.js
+// @require 	 https://www.gstatic.com/firebasejs/9.1.0/firebase-auth-compat.js
+// @require 	 https://www.gstatic.com/firebasejs/9.1.0/firebase-database-compat.js
+// @grant        none
+// ==/UserScript==
 
+console.log("v1");
+//Star data ------------------------------------------------------------------------------------------------------------------------------------------
+var db,key,today,dd,mm,yyyy;
+today = new Date();
+dd = String(today.getUTCDate()).padStart(2, '0');
+mm = String(today.getUTCMonth() + 1).padStart(2, '0'); //January is 0!
+yyyy = today.getUTCFullYear();
+
+
+function InitializeFirebase() {
+    const firebaseConfig = {
+        apiKey: "AIzaSyDU-IpVvwvjWkwjNB7WL_gb4cbP05E4WD8",
+        authDomain: "taki-hoang.firebaseapp.com",
+        databaseURL: "https://taki-hoang-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "taki-hoang",
+        storageBucket: "taki-hoang.appspot.com",
+        messagingSenderId: "380087728671",
+        appId: "1:380087728671:web:760e25c21969ffbac8732a"
+    };
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    db= app.database();
+}
+//End data ------------------------------------------------------------------------------------------------------------------------------------------
+
+//Star control ------------------------------------------------------------------------------------------------------------------------------------------
+var divMain;
+var divKeyUser,lbKeyUser,intKeyUser;
+var divTask,lbTask;
+
+function AddKeyUser(){
+    divKeyUser = window.document.createElement('div');
+
+    lbKeyUser=window.document.createElement('label');
+    lbKeyUser.innerText="Key User";
+    lbKeyUser.setAttribute('style','padding-right: 10px;');
+
+    intKeyUser = window.document.createElement('input');
+    intKeyUser.id = "KeyUser";
+    intKeyUser.value=localStorage.getItem('KeyUser');
+    intKeyUser.setAttribute('style','color: black;padding: 2px;');
+
+    divKeyUser.appendChild(lbKeyUser);
+    divKeyUser.appendChild(intKeyUser);
+    divMain.appendChild(divKeyUser);
+
+    intKeyUser.addEventListener("change", function(){
+        localStorage.setItem('KeyUser', intKeyUser.value);
+    });
+}
+function AddTask(){
+    divTask = window.document.createElement('div');
+    divTask.setAttribute('style','margin-top: 10px;');
+
+    lbTask=window.document.createElement('label');
+    lbTask.innerText="Task 0/5";
+    lbTask.setAttribute('style','padding-right: 10px;');
+
+    divTask.appendChild(lbTask);
+    divMain.appendChild(divTask);
+}
+function AddControl(){
+    divMain = window.document.createElement('div');
+    divMain.id="divMain";
+    divMain.setAttribute('style','color: #ffbe00;position: fixed;top: 0px;z-index: 999999999;font-weight: bold;background-color: black; padding: 10px;');
+
+    window.document.querySelector('body').appendChild(divMain);
+    AddKeyUser();
+    AddTask();
+
+}
+//End control ------------------------------------------------------------------------------------------------------------------------------------------
+(function() {
+    AddControl();
+    
+
+})();
