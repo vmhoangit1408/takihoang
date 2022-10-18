@@ -108,7 +108,7 @@ function AddControl(){
                 window.location.href="https://taki.app/u/honsonm2tam/"
             }
         }
-        if(localStorage.getItem('Task'+dd+mm+yyyy)=="6"){
+        if(localStorage.getItem('Task'+dd+mm+yyyy)=="7"){
             if(window.location.href=="https://taki.app/u/daohaitacm2chin/"){
                 if(document.getElementsByClassName("css-1f5xamu e56mmy09").length == 0){
                     if(document.getElementsByClassName("css-kl1r3v e15ggqxc9")[0].innerText == "Follow"){
