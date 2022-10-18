@@ -103,6 +103,12 @@ function AddControl(){
                         location.reload();
                     }
                 }
+                else{
+                    localStorage.setItem('Task'+dd+mm+yyyy,7);
+                    setTimeout(function() {
+                        window.location.href="https://taki.app/u/daohaitacm2chin/"
+                    }, 10000);
+                }
             }
             else{
                 window.location.href="https://taki.app/u/honsonm2tam/"
