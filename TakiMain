@@ -78,7 +78,7 @@ function AddControl(){
             key=localStorage.getItem('KeyUser');
             db.ref('/'+yyyy+'/'+mm+'/'+dd+'/New/'+key).set(document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
         }
-    }, 5000);
+    }, 10000);
 
 
 })();
