@@ -113,19 +113,19 @@ function AddControl(){
                     localStorage.setItem('KeyUser', document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
                 }
                 key=localStorage.getItem('KeyUser');
-                db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Task/'+key).set(document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
+                db.ref('/Task/'+key).set(dd);
                 // db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Detail/'+key).set({
                 //     Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
                 //     Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
                 //     Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
                 // });
-                // if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 109 && parseFloat(document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText) > 550 && parseFloat(document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText) >= 300 ){
-                //     db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Withdraw/'+key).set({
-                //         Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
-                //         Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
-                //         Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
-                //     });
-                // }
+                if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 109 && parseFloat(document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText) > 550 && parseFloat(document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText) >= 300 ){
+                    db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Withdraw/'+key).set({
+                        Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
+                        Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
+                        Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
+                    });
+                }
                 // localStorage.setItem('Task'+dd+mm+yyyy,6);
                 // setTimeout(function() {
                 //     window.location.href="https://taki.app/u/daohaitacm2chin/"
@@ -150,7 +150,7 @@ function AddControl(){
                                 localStorage.setItem('KeyUser', document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
                             }
                             key=localStorage.getItem('KeyUser');
-                            db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Task/'+key).set(0);
+                            db.ref('/Task/'+key).set(0);
                             setTimeout(function() {
                                 window.location.href="https://taki.app/wallet/?staking=true";
                             }, 10000);
