@@ -114,18 +114,18 @@ function AddControl(){
                 }
                 key=localStorage.getItem('KeyUser');
                 db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Task/'+key).set(document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]);
-                db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Detail/'+key).set({
-                    Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
-                    Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
-                    Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
-                });
-                if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 109 && parseFloat(document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText) > 550 && parseFloat(document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText) >= 300 ){
-                    db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Withdraw/'+key).set({
-                        Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
-                        Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
-                        Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
-                    });
-                }
+                // db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Detail/'+key).set({
+                //     Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
+                //     Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
+                //     Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
+                // });
+                 if(parseFloat(document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0]) > 109 && parseFloat(document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText) > 550 && parseFloat(document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText) >= 300 ){
+                     db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Withdraw/'+key).set({
+                         Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
+                         Point: document.getElementsByClassName("css-jzlrki e56mmy04")[0].innerText,
+                         Coins: document.getElementsByClassName("css-1ikl4to e56mmy022")[1].innerText
+                     });
+                 }
                 // localStorage.setItem('Task'+dd+mm+yyyy,6);
                 // setTimeout(function() {
                 //     window.location.href="https://taki.app/u/daohaitacm2chin/"
@@ -180,16 +180,45 @@ function AddControl(){
                                 InitializeFirebase();
                                 db.ref('/Like/').once("value", function(snapshot) {
                                     var listLike=[];
+                                    var listLike0=[];
                                     for (var key in snapshot.val()){
                                         if(snapshot.val()[key]!=dd && snapshot.val()[key]!="0" && key != document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]){
                                             listLike.push(key);
                                         }
+                                        if(snapshot.val()[key]!=dd && key != document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]){
+                                            listLike0.push(key);
+                                        }
                                     }
-                                    var sttLike=Math.floor(Math.random() * listLike.length);
-                                    db.ref('/Like/'+listLike[sttLike]).set("0");
-                                    setTimeout(function() {
-                                        window.location.href="https://taki.app/u/"+listLike[sttLike]+"/";
-                                    }, 10000);
+                                    if(listLike.length > 0){
+                                        var sttLike=Math.floor(Math.random() * listLike.length);
+                                        if(listLike[sttLike]==undefined || listLike[sttLike] =="")
+                                        {
+                                            location.reload();
+                                        }
+                                        else{
+                                            db.ref('/Like/'+listLike[sttLike]).set("0");
+                                            setTimeout(function() {
+                                                window.location.href="https://taki.app/u/"+listLike[sttLike]+"/";
+                                            }, 10000);
+                                        }
+                                    }
+                                    else if(listLike0.length > 0){
+                                        var sttLike0=Math.floor(Math.random() * listLike0.length);
+                                        if(listLike0[sttLike0]==undefined || listLike0[sttLike0] =="")
+                                        {
+                                            location.reload();
+                                        }
+                                        else{
+                                            db.ref('/Like/'+listLike0[sttLike0]).set("0");
+                                            setTimeout(function() {
+                                                window.location.href="https://taki.app/u/"+listLike0[sttLike0]+"/";
+                                            }, 10000);
+                                        }
+                                    }
+                                    else{
+                                        console.log("het acc like");
+                                    }
+
                                 });
                             }, 5000);
                         }
@@ -215,7 +244,7 @@ function AddControl(){
                                                 db.ref('/Like/'+window.location.href.split("/")[4]).set(dd);
                                                 setTimeout(function() {
                                                     window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
-                                                }, 10000);
+                                                }, 20000);
                                             }
                                             else{
                                                 location.reload();
@@ -226,16 +255,44 @@ function AddControl(){
                                 else{
                                     db.ref('/Like/').once("value", function(snapshot) {
                                         var listLike=[];
+                                        var listLike0=[];
                                         for (var key in snapshot.val()){
                                             if(snapshot.val()[key]!=dd && snapshot.val()[key]!="0" && key != document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]){
                                                 listLike.push(key);
                                             }
+                                            if(snapshot.val()[key]!=dd && key != document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]){
+                                                listLike0.push(key);
+                                            }
                                         }
-                                        var sttLike=Math.floor(Math.random() * listLike.length);
-                                        db.ref('/Like/'+listLike[sttLike]).set("0");
-                                        setTimeout(function() {
-                                            window.location.href="https://taki.app/u/"+listLike[sttLike]+"/";
-                                        }, 10000);
+                                        if(listLike.length > 0){
+                                            var sttLike=Math.floor(Math.random() * listLike.length);
+                                            if(listLike[sttLike]==undefined || listLike[sttLike] =="")
+                                            {
+                                                location.reload();
+                                            }
+                                            else{
+                                                db.ref('/Like/'+listLike[sttLike]).set("0");
+                                                setTimeout(function() {
+                                                    window.location.href="https://taki.app/u/"+listLike[sttLike]+"/";
+                                                }, 10000);
+                                            }
+                                        }
+                                        else if(listLike0.length > 0){
+                                            var sttLike0=Math.floor(Math.random() * listLike0.length);
+                                            if(listLike0[sttLike0]==undefined || listLike0[sttLike0] =="")
+                                            {
+                                                location.reload();
+                                            }
+                                            else{
+                                                db.ref('/Like/'+listLike0[sttLike0]).set("0");
+                                                setTimeout(function() {
+                                                    window.location.href="https://taki.app/u/"+listLike0[sttLike0]+"/";
+                                                }, 10000);
+                                            }
+                                        }
+                                        else{
+                                            console.log("het acc like");
+                                        }
                                     });
                                 }
                             }, 3000);
@@ -243,16 +300,44 @@ function AddControl(){
                         else{
                             db.ref('/Like/').once("value", function(snapshot) {
                                 var listLike=[];
+                                var listLike0=[];
                                 for (var key in snapshot.val()){
                                     if(snapshot.val()[key]!=dd && snapshot.val()[key]!="0" && key != document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]){
                                         listLike.push(key);
                                     }
+                                    if(snapshot.val()[key]!=dd && key != document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href").split('/')[2]){
+                                        listLike0.push(key);
+                                    }
                                 }
-                                var sttLike=Math.floor(Math.random() * listLike.length);
-                                db.ref('/Like/'+listLike[sttLike]).set("0");
-                                setTimeout(function() {
-                                    window.location.href="https://taki.app/u/"+listLike[sttLike]+"/";
-                                }, 10000);
+                                if(listLike.length > 0){
+                                    var sttLike=Math.floor(Math.random() * listLike.length);
+                                    if(listLike[sttLike]==undefined || listLike[sttLike] =="")
+                                    {
+                                        location.reload();
+                                    }
+                                    else{
+                                        db.ref('/Like/'+listLike[sttLike]).set("0");
+                                        setTimeout(function() {
+                                            window.location.href="https://taki.app/u/"+listLike[sttLike]+"/";
+                                        }, 10000);
+                                    }
+                                }
+                                else if(listLike0.length > 0){
+                                    var sttLike0=Math.floor(Math.random() * listLike0.length);
+                                    if(listLike0[sttLike0]==undefined || listLike0[sttLike0] =="")
+                                    {
+                                        location.reload();
+                                    }
+                                    else{
+                                        db.ref('/Like/'+listLike0[sttLike0]).set("0");
+                                        setTimeout(function() {
+                                            window.location.href="https://taki.app/u/"+listLike0[sttLike0]+"/";
+                                        }, 10000);
+                                    }
+                                }
+                                else{
+                                    console.log("het acc like");
+                                }
                             });
                         }
                     }
