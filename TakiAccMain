@@ -185,6 +185,7 @@ function AddControl(){
                                     }
                                     else{
                                         console.log("het acc like");
+                                        window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                                     }
 
                                 });
@@ -261,6 +262,7 @@ function AddControl(){
                                         }
                                         else{
                                             console.log("het acc like");
+                                            window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                                         }
                                     });
                                 }
@@ -306,6 +308,7 @@ function AddControl(){
                                 }
                                 else{
                                     console.log("het acc like");
+                                    window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                                 }
                             });
                         }
