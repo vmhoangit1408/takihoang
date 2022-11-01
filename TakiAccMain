@@ -102,7 +102,7 @@ function AddControl(){
                         key=localStorage.getItem('KeyUser');
                         db.ref('/Task/'+key).set(dd);
                         try{
-                            db.ref('/'+yyyy+'/'+mm+'/'+dd+'_Detail/'+key).set({
+                            db.ref('/'+yyyy+'/'+mm+'/'+dd+'/Detail/'+key).set({
                                 Taki: document.getElementsByClassName("coin-value")[0].innerText.split("\n")[0],
                                 Point: document.getElementsByClassName("css-14hv78l e56mmy04")[0].innerText//css-14hv78l e56mmy04
                             });
