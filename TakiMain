@@ -1,4 +1,4 @@
-console.log("v1");
+console.log("v2");
 //Star data ------------------------------------------------------------------------------------------------------------------------------------------
 var db,key,today,dd,mm,yyyy;
 today = new Date();
@@ -70,7 +70,7 @@ function AddControl(){
 
 }
 //End control ------------------------------------------------------------------------------------------------------------------------------------------
-(function() {
+window.onload = function() {
     var UserLike = "thuykieutkhong,thuyngatmot,daikieuthai,dungbuontba,emoitbon,dungkhoctnam,chilitsau,capbatbay,subasattam,ketuiditchin";
     UserLike = UserLike + ",khoathitmuoi,thewint1mot,cungnhit1hai,tieukhat1ba,baolamt1bon,kimhoat1nam,kimcuct1sau,kimphuongt1bay,anhchiyeu1tam,vanvant1chin";
     UserLike = UserLike + ",daihiept2muoi,truocmatt2mot,sebatt2hai,emdit2ba,saygiact2bon,bandaut2nam,yeunguoit2sau,matthut2bay,vungtaut2tam,ngulaot2chin";
@@ -80,9 +80,9 @@ function AddControl(){
     var userMain=UserLike.split(',');
 
     AddControl();
-    //setTimeout(function() {
-        //location.reload();
-    //}, 120000);
+    setTimeout(function() {
+        location.reload();
+    }, 120000);
     if(localStorage.getItem('Task'+dd+mm+yyyy)==null){
         localStorage.setItem('Task'+dd+mm+yyyy,0);//localStorage.setItem('Task16102022',0);
     }
@@ -319,4 +319,4 @@ function AddControl(){
         }
     }, 10000);
 
-})();
+};
