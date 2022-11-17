@@ -242,7 +242,7 @@ window.onload = function() {
                                                 localStorage.setItem('Task'+dd+mm+yyyy,4);
                                                 db.ref('/Like/'+window.location.href.split("/")[4]).set(dd);
                                                 setTimeout(function() {
-                                                    window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
+                                                    window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                                                 }, 10000);
                                             }
                                             else{
