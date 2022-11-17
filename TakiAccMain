@@ -70,9 +70,19 @@ function AddControl(){
 
 }
 console.log("111111111111");
+var checkOnload=true;
+setTimeout(function() {
+    if(checkOnload){
+        location.reload();
+    }
+    else{
+        console.log("333333333333");
+    }
+}, 15000);
 //End control ------------------------------------------------------------------------------------------------------------------------------------------
 window.onload = function() {
     console.log("222222222222");
+    checkOnload=false;
 
     var UserLike = "vmhoangit1408,phuonganh1511,alicetran1510,danyalpro2802,gianghoang151,ntcamgiang1608,gihogift,trananhthu1510,camgiang1003,anankasport2902";
     UserLike = UserLike + ",mrtran190617,thuytienrose24,thientam200617,katarinanguyen,anivianguyen11,dianacao210617,annievo2001,trovequakhufull,banthanfullhd,hayluontien";
@@ -109,9 +119,9 @@ window.onload = function() {
     var userMain=UserLike.split(',');
 
     AddControl();
-    setTimeout(function() {
-        location.reload();
-    }, 120000);
+    //setTimeout(function() {
+    //location.reload();
+    //}, 120000);
     if(localStorage.getItem('Task'+dd+mm+yyyy)==null){
         localStorage.setItem('Task'+dd+mm+yyyy,0);//localStorage.setItem('Task16102022',0);
     }
@@ -370,18 +380,18 @@ window.onload = function() {
                                     }, 2000);
                                 }
                                 else{
-                                     window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
+                                    window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                                 }
                             }, 3000);
                         }
                         else{
-                             window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
+                            window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                         }
                     }
                 }
             }, 5000);
         }
-    }, 10000);
+    }, 5000);
 
 };
 
