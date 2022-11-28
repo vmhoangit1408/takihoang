@@ -71,7 +71,7 @@ function AddControl(){
 }
 setTimeout(function() {
     location.reload();
-}, 90000);
+}, 120000);
 console.log("111111111111");
 
 var checkOnload=true;
