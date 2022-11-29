@@ -322,7 +322,7 @@ window.onload = function() {
                                     else if(window.document.querySelectorAll("body > div.css-myk9g6.ec6v7f3")[0].innerText!=""){
                                         clearInterval(checkStatus);
                                         localStorage.setItem('Fl'+dd+mm+yyyy,parseFloat(localStorage.getItem('Fl'+dd+mm+yyyy))+1);
-                                        if(parseFloat(localStorage.getItem('Fl'+dd+mm+yyyy)) < 4){
+                                        if(parseFloat(localStorage.getItem('Fl'+dd+mm+yyyy)) < 1){
                                             window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
                                         }
                                         else{
@@ -343,9 +343,19 @@ window.onload = function() {
                     else if(localStorage.getItem('Task'+dd+mm+yyyy)=="2"){
                         if(window.location.href=="https://taki.app/home/"){
                             try{
-                                if(parseFloat(document.getElementsByClassName("css-17d66in e2dblvk10")[0].innerText.slice(" ")[0]) <= 1){
+                                if(document.getElementsByClassName("css-17d66in e2dblvk10")[0].innerText.split(" ")[0] == "0"){
                                     localStorage.setItem('Task'+dd+mm+yyyy,3);
                                     window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
+                                }
+                                else if(document.getElementsByClassName("css-17d66in e2dblvk10")[0].innerText.split(" ")[0] == "1"){
+                                    if(document.getElementsByClassName("css-1unwn8l ej2twmx21")[0].innerText.split("\n")[0] =="4.50" || document.getElementsByClassName("css-1unwn8l ej2twmx21")[0].innerText.split("\n")[0] =="2.25"){
+                                        localStorage.setItem('Task'+dd+mm+yyyy,3);
+                                        window.location.href="https://taki.app"+document.getElementsByClassName("css-14e08vj ej2twmx21")[2].getAttribute("href");
+                                    }
+                                    else{
+                                        localStorage.setItem('Task'+dd+mm+yyyy,1);
+                                        window.location.href="https://taki.app/u/"+userMain[Math.floor(Math.random() * userMain.length)]+"/";
+                                    }
                                 }
                                 else{
                                     localStorage.setItem('Task'+dd+mm+yyyy,1);
